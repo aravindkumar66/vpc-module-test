@@ -7,22 +7,21 @@
 }  */
 
 output "public_subnet_ids" {
-  value = aws_subnet.public[*].id
+  value = module.vpc.public_subnet_ids
 }
 
 output "private_subnet_ids" {
-  value = aws_subnet.private[*].id
+  value = module.vpc.private_subnet_ids
 }
 
 output "database_subnet_ids" {
-  value = aws_subnet.database[*].id
-}
-
+  value = module.vpc.database_subnet_ids
+} 
 
 /* output "az_info" {
     value = module.vpc.az_info
 } */
 
-/* output "default_vpc_info" {
-  value = module.vpc.default_vpc_info
-} */
+output "database_subnet_group_name" {
+  value = module.vpc.database_subnet_group_name
+}
